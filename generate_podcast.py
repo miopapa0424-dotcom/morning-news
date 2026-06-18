@@ -15,6 +15,7 @@ import re
 import sys
 import json
 import html
+import shutil
 import asyncio
 import subprocess
 from datetime import datetime, timezone, timedelta
@@ -125,13 +126,26 @@ def render_feed(eps: list) -> str:
 
 
 def publish(date_label: str):
-    """public/ を gh-pages へ force-push（毎回1コミットに置き換え＝履歴フラット）。
-       依存: pip install ghp-import / -n=.nojekyll付与 -f=強制 -p=push -b=対象ブランチ"""
-    subprocess.run(
-        ["ghp-import", "-n", "-f", "-p", "-m", f"episode {date_label}",
-         "-b", "gh-pages", "public"],
-        cwd=REPO_DIR, check=True,
-    )
+    """public/ を gh-pages へ「単一コミット」で force-push（履歴フラット＝常に1コミット）。
+       public/ の中に毎回まっさらな git を作り直し、orphanコミット1つだけを強制pushする。
+       これにより gh-pages は何回公開しても常に1コミットのまま（履歴が増え続けない）。
+       状態（episodes.json・mp3）は public/ のファイルが保持するので .git を消しても失われない。
+       認証は gh が設定した git の credential helper（github.com）を利用する。"""
+    remote = subprocess.check_output(
+        ["git", "-C", str(REPO_DIR), "remote", "get-url", "origin"]
+    ).decode().strip()
+    (PUBLIC_DIR / ".nojekyll").write_text("", encoding="utf-8")   # GitHub Pages 素通し用
+    shutil.rmtree(PUBLIC_DIR / ".git", ignore_errors=True)
+
+    def g(*args):
+        subprocess.run(["git", "-C", str(PUBLIC_DIR), *args], check=True,
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+    g("init", "-q", "-b", "gh-pages")
+    g("add", "-A")
+    g("-c", "user.email=miopapa0424@gmail.com", "-c", "user.name=yasuhiro",
+      "commit", "-q", "-m", f"episode {date_label}")
+    g("push", "-q", "-f", remote, "gh-pages")
 
 
 def main():
