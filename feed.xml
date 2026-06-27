@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>やすひろの朝ニュース</title>
+    <link>https://miopapa0424-dotcom.github.io/morning-news/</link>
+    <language>ja</language>
+    <description>毎朝自動でお届けする、XRPの公式ニュースまとめ。投資助言ではありません。</description>
+    <lastBuildDate>Sat, 27 Jun 2026 09:19:13 +0900</lastBuildDate>
+    <itunes:author>やすひろ</itunes:author>
+    <itunes:summary>毎朝自動でお届けする、XRPの公式ニュースまとめ。投資助言ではありません。</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="News"/>
+    <itunes:image href="https://miopapa0424-dotcom.github.io/morning-news/cover.jpg"/>
+    <image>
+      <url>https://miopapa0424-dotcom.github.io/morning-news/cover.jpg</url>
+      <title>やすひろの朝ニュース</title>
+      <link>https://miopapa0424-dotcom.github.io/morning-news/</link>
+    </image>
+    <item>
+      <title>6月27日のニュースまとめ</title>
+      <description>6月27日のニュースまとめ</description>
+      <pubDate>Sat, 27 Jun 2026 09:18:53 +0900</pubDate>
+      <guid isPermaLink="false">2026-06-27.mp3</guid>
+      <enclosure url="https://miopapa0424-dotcom.github.io/morning-news/episodes/2026-06-27.mp3" length="2386512" type="audio/mpeg"/>
+      <itunes:duration>00:06:37</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>6月21日のニュースまとめ</title>
+      <description>6月21日のニュースまとめ</description>
+      <pubDate>Sun, 21 Jun 2026 08:40:56 +0900</pubDate>
+      <guid isPermaLink="false">2026-06-21.mp3</guid>
+      <enclosure url="https://miopapa0424-dotcom.github.io/morning-news/episodes/2026-06-21.mp3" length="2577600" type="audio/mpeg"/>
+      <itunes:duration>00:07:09</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>6月20日のニュースまとめ</title>
+      <description>6月20日のニュースまとめ</description>
+      <pubDate>Sat, 20 Jun 2026 09:12:36 +0900</pubDate>
+      <guid isPermaLink="false">2026-06-20.mp3</guid>
+      <enclosure url="https://miopapa0424-dotcom.github.io/morning-news/episodes/2026-06-20.mp3" length="2439936" type="audio/mpeg"/>
+      <itunes:duration>00:06:46</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>6月19日 やすひろの朝ニュース</title>
+      <description>6月19日 やすひろの朝ニュース</description>
+      <pubDate>Fri, 19 Jun 2026 10:18:24 +0900</pubDate>
+      <guid isPermaLink="false">2026-06-19-news.mp3</guid>
+      <enclosure url="https://miopapa0424-dotcom.github.io/morning-news/episodes/2026-06-19-news.mp3" length="1836576" type="audio/mpeg"/>
+      <itunes:duration>00:05:06</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
